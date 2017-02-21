@@ -2,7 +2,7 @@ import random
 secret = random.randint(1, 99)
 guess = 0
 tries = 0
-print "AHOY! I'm the Dread Pirate Roberts, and I have a big secret!"
+print "AHOY! I'm the Dread Pirate Roberts, and I have a huge secret!"
 print "It is a number from 1 to 99. I'll give you 6 tries. "
 while guess != secret and tries < 6:
     guess = input("What's yer guess? ")
