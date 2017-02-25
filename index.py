@@ -1,22 +1,18 @@
-import random
+import random, easygui
 secret = random.randint(1, 99)
 guess = 0
 tries = 0
-print "AHOY! I'm the Dread Pirate Roberts, and I have a huge secret!"
-print "It is a number from 1 to 99. I'll give you 6 tries. "
+easygui.msgbox("""AHOY! I'm the Dread Pirate Roberts, and I have a secret!
+It is a number from 1 to 99. I'll give you 6 tries.""")
 while guess != secret and tries < 6:
-    guess = input("What's yer guess? ")
+    guess = easygui.integerbox("What's yer guess, matey?")
+    if not guess: break
     if guess < secret:
-        print "Too low, ye scurvy dog!"
+        easygui.msgbox(str(guess) + " is too low, ye scurvy dog!")
     elif guess > secret:
-        print "Too high, landlubber!"
+        easygui.msgbox(str(guess) + " is too high, landlubber!")
     tries = tries + 1
 if guess == secret:
-    print "Avast! Ye got it! Found my secret, ye did!"
+    easygui.msgbox("Avast! Ye got it! Found my secret, ye did!")
 else:
-    print "No more guesses! Better luck next time, matey!"
-    print "The secret number was", secret
-
-
-
-
+    easygui.msgbox("No more guesses! Better luck next time, matey!")
